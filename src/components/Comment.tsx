@@ -1,29 +1,29 @@
-import { ThumbsUp, Trash } from 'phosphor-react'
-import { useState } from 'react'
-import { Avatar } from './Avatar'
-import styles from './Comment.module.css'
+import { ThumbsUp, Trash } from 'phosphor-react';
+import { useState } from 'react';
+import { Avatar } from './Avatar';
+import styles from './Comment.module.css';
 
 interface CommentProps {
-  content: string
-  onDeleteComment: (comment: string) => void
+  content: string;
+  onDeleteComment: (comment: string) => void;
 }
 
 export function Comment({ content, onDeleteComment }: CommentProps) {
-  const [likeCount, setLikeCount] = useState(0)
+  const [likeCount, setLikeCount] = useState(0);
 
   function handleDeleteComment() {
-    onDeleteComment(content)
+    onDeleteComment(content);
   }
 
   function handleLinkComment() {
-    setLikeCount(state => {
-      return state + 1
-    })
+    setLikeCount((state) => {
+      return state + 1;
+    });
   }
 
   return (
     <div className={styles.comment}>
-      <Avatar withBorder={false} src="https://github.com/anderson-gato.png" />
+      <Avatar withBorder={false} src="https://github.com/under-sin.png" />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
@@ -51,5 +51,5 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
         </footer>
       </div>
     </div>
-  )
+  );
 }
